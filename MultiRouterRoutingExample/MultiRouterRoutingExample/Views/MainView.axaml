@@ -1,0 +1,108 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:MultiRouterRoutingExample.ViewModels"
+			 xmlns:v="using:MultiRouterRoutingExample.Views"
+			 xmlns:rxui="using:Avalonia.ReactiveUI"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="MultiRouterRoutingExample.Views.MainView"
+             x:DataType="vm:MainViewModel">
+	<Design.DataContext>
+		<!-- This only sets the DataContext for the previewer in an IDE,
+         to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+		<vm:MainViewModel />
+	</Design.DataContext>
+	<Grid ColumnDefinitions ="*,*,*">
+		<StackPanel Orientation="Vertical" Grid.Column="0">
+			<TextBlock Text="Stack A Top"/>
+			<ContentControl Content="{Binding StackA.CurrentViewModel^}">
+				<ContentControl.DataTemplates>
+					<DataTemplate DataType="{x:Type vm:TestVMA}">
+						<StackPanel Orientation="Vertical">
+							<TextBlock Text="{Binding UrlPathSegment}"/>
+							<TextBlock Text="{Binding ID}"/>
+						</StackPanel>
+					</DataTemplate>
+					<DataTemplate DataType="{x:Type vm:TestVMB}">
+						<StackPanel Orientation="Vertical">
+							<TextBlock Text="{Binding UrlPathSegment}"/>
+							<TextBlock Text="{Binding ID}"/>
+						</StackPanel>
+					</DataTemplate>
+				</ContentControl.DataTemplates>
+			</ContentControl>
+			<HeaderedContentControl Header="Stack Contents" BorderBrush="Black" BorderThickness="1">
+				<ItemsControl ItemsSource="{Binding StackA.NavigationStack}">
+					<ItemsControl.DataTemplates>
+						<DataTemplate DataType="{x:Type vm:TestVMA}">
+							<TextBlock Text="{Binding UrlPathSegment}"/>
+						</DataTemplate>
+						<DataTemplate DataType="{x:Type vm:TestVMB}">
+							<TextBlock Text="{Binding UrlPathSegment}"/>
+						</DataTemplate>
+					</ItemsControl.DataTemplates>
+				</ItemsControl>
+			</HeaderedContentControl>
+		</StackPanel>
+		<StackPanel Orientation="Vertical" Grid.Column="1">
+			<StackPanel Orientation="Horizontal">
+				<Button Content="Set Stack A" Command="{Binding SwitchToACommand}"/>
+				<Button Content="Set Stack B" Command="{Binding SwitchToBCommand}"/>
+			</StackPanel>
+			<StackPanel Orientation="Horizontal">
+				<TextBlock Text="Current Router is: "/>
+				<TextBlock Text="{Binding CurrentRouterLabel}"/>
+			</StackPanel>
+			<HeaderedContentControl Header="Avalonia Routed View Host" BorderBrush="Black" BorderThickness="1">
+				<rxui:RoutedViewHost Router="{Binding Router}">
+					<rxui:RoutedViewHost.ViewLocator>
+						<v:TestLocator/>
+					</rxui:RoutedViewHost.ViewLocator>
+				</rxui:RoutedViewHost>
+			</HeaderedContentControl>
+			<HeaderedContentControl Header="Tweaked Routed View Host" BorderBrush="Black" BorderThickness="1">
+				<v:TweakedRoutedViewHost Router="{Binding Router}">
+					<v:TweakedRoutedViewHost.ViewLocator>
+						<v:TestLocator/>
+					</v:TweakedRoutedViewHost.ViewLocator>
+				</v:TweakedRoutedViewHost>
+			</HeaderedContentControl>
+			<StackPanel Orientation="Horizontal">
+				<Button Content="Toggle and Navigate" Command="{Binding ToggleAndNavigateBothCommand}"/>
+				<Button Content="Navigate and Toggle" Command="{Binding NavigateBothAndToggleCommand}"/>
+			</StackPanel>
+		</StackPanel>
+		<StackPanel Orientation="Vertical" Grid.Column="2">
+			<TextBlock Text="Stack B Top"/>
+			<ContentControl Content="{Binding StackB.CurrentViewModel^}">
+				<ContentControl.DataTemplates>
+					<DataTemplate DataType="{x:Type vm:TestVMB}">
+						<StackPanel Orientation="Vertical">
+							<TextBlock Text="{Binding UrlPathSegment}"/>
+							<TextBlock Text="{Binding ID}"/>
+						</StackPanel>
+					</DataTemplate>
+					<DataTemplate DataType="{x:Type vm:TestVMA}">
+						<StackPanel Orientation="Vertical">
+							<TextBlock Text="{Binding UrlPathSegment}"/>
+							<TextBlock Text="{Binding ID}"/>
+						</StackPanel>
+					</DataTemplate>
+				</ContentControl.DataTemplates>
+			</ContentControl>
+			<HeaderedContentControl Header="Stack Contents" BorderBrush="Black" BorderThickness="1">
+				<ItemsControl ItemsSource="{Binding StackB.NavigationStack}">
+					<ItemsControl.DataTemplates>
+						<DataTemplate DataType="{x:Type vm:TestVMA}">
+							<TextBlock Text="{Binding UrlPathSegment}"/>
+						</DataTemplate>
+						<DataTemplate DataType="{x:Type vm:TestVMB}">
+							<TextBlock Text="{Binding UrlPathSegment}"/>
+						</DataTemplate>
+					</ItemsControl.DataTemplates>
+				</ItemsControl>
+			</HeaderedContentControl>
+		</StackPanel>
+	</Grid>
+</UserControl>

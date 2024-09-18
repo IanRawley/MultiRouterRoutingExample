@@ -1,0 +1,53 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35312.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiRouterRoutingExample", "MultiRouterRoutingExample\MultiRouterRoutingExample\MultiRouterRoutingExample.csproj", "{FA3EFF30-BA85-4862-BA80-E473A0132605}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiRouterRoutingExample.Android", "MultiRouterRoutingExample\MultiRouterRoutingExample.Android\MultiRouterRoutingExample.Android.csproj", "{C507BE6C-9D9C-4380-B5F4-395D34B4F587}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiRouterRoutingExample.Desktop", "MultiRouterRoutingExample\MultiRouterRoutingExample.Desktop\MultiRouterRoutingExample.Desktop.csproj", "{59974DE3-6004-4FC3-AED5-AB210B4944D4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiRouterRoutingExample.iOS", "MultiRouterRoutingExample\MultiRouterRoutingExample.iOS\MultiRouterRoutingExample.iOS.csproj", "{29F74EF7-3E34-4044-99B4-BF35A656221D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiRouterRoutingExample.Browser", "MultiRouterRoutingExample\MultiRouterRoutingExample.Browser\MultiRouterRoutingExample.Browser.csproj", "{BF5C061A-AB0C-4CD7-BEE6-4FCD6B6C52D7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FA3EFF30-BA85-4862-BA80-E473A0132605}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA3EFF30-BA85-4862-BA80-E473A0132605}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA3EFF30-BA85-4862-BA80-E473A0132605}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA3EFF30-BA85-4862-BA80-E473A0132605}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C507BE6C-9D9C-4380-B5F4-395D34B4F587}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C507BE6C-9D9C-4380-B5F4-395D34B4F587}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C507BE6C-9D9C-4380-B5F4-395D34B4F587}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{C507BE6C-9D9C-4380-B5F4-395D34B4F587}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C507BE6C-9D9C-4380-B5F4-395D34B4F587}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C507BE6C-9D9C-4380-B5F4-395D34B4F587}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{59974DE3-6004-4FC3-AED5-AB210B4944D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59974DE3-6004-4FC3-AED5-AB210B4944D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59974DE3-6004-4FC3-AED5-AB210B4944D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59974DE3-6004-4FC3-AED5-AB210B4944D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29F74EF7-3E34-4044-99B4-BF35A656221D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29F74EF7-3E34-4044-99B4-BF35A656221D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29F74EF7-3E34-4044-99B4-BF35A656221D}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{29F74EF7-3E34-4044-99B4-BF35A656221D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29F74EF7-3E34-4044-99B4-BF35A656221D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29F74EF7-3E34-4044-99B4-BF35A656221D}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{BF5C061A-AB0C-4CD7-BEE6-4FCD6B6C52D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF5C061A-AB0C-4CD7-BEE6-4FCD6B6C52D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF5C061A-AB0C-4CD7-BEE6-4FCD6B6C52D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF5C061A-AB0C-4CD7-BEE6-4FCD6B6C52D7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {27C97977-61D3-4B88-8E21-B426721A1FBA}
+	EndGlobalSection
+EndGlobal
